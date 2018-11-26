@@ -1,0 +1,34 @@
+body {
+    background-image: url("dark.jpg");
+    color: white;
+    text-align: center;
+}
+
+#instructions {
+    font-size: 25px;
+}
+
+.dropZone {
+    background-color: black;
+    border: white 2px solid;
+    width: 110px;
+    height: 110px;
+    padding: 8px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.button {
+    height: 70px;
+    width: 150px;
+    border: 4px solid #29a3a3;
+    font-size: 25px;
+    margin: 40px;
+    display: inline-block;
+}
+
+.letters {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
