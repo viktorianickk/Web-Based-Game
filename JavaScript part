@@ -1,0 +1,120 @@
+//create a blank array, where the letters from the alphabet will be stored
+var alphabet = [];
+
+//generate the alphabet from 'a' to 'z'
+//credit to Kaloyan Velikov
+function generateLetters(a, z) {
+    var i = a.charCodeAt(0);
+    var j = z.charCodeAt(0);
+    for (;i <= j; ++i) {
+        alphabet.push(String.fromCharCode(i));
+    }
+    return alphabet;
+}
+
+//shuffle the letters; Fisher-Yates algorithm
+function shuffle(alphabet) {
+    //temp = temporary value; j = random value
+    var i = alphabet.length, temp, j;
+    while (i > 0){
+        //when an element is being dragged, its id is stored inside a variable ans when it id dropped
+        //somewhere, the element is fetched from the stored variable and it is appended to the drop area
+        j = Math.floor(Math.random() * i);
+        i--;
+        temp = alphabet[i];
+        alphabet[i] = alphabet[j];
+        alphabet[j] = temp;
+    }
+    return alphabet;
+}
+
+function createLetterImg (){
+    //this loop append all of the info to all letters
+    for (var index = 0; index < alphabet.length; index++) {
+        //create an image element and assign a variable
+        var img = document.createElement("img");
+        //source of the image
+        img.src = alphabet[index] + ".png";
+        //give it an id
+        img.id = "letter" + alphabet[index];
+        //give it a class name
+        img.className = "letters";
+        //make it draggable
+        img.draggable = true;
+        //create an ondragstart function so that it can be dragged
+        //credit to TriFu(stackoverflow.com user)
+        img.onload = function (event) {
+            this.ondragstart(drag(event));
+
+        }
+        //append everything to a specific letter
+        document.getElementById("lettersContainer").appendChild(img);
+    }
+}
+
+//a function that compiles all the functions that are need for generating the alphabet
+function generateAlphabet(){
+    generateLetters('a', 'z');
+    shuffle(alphabet);
+    createLetterImg ()
+}
+
+//the function will be activated when the page is loaded
+window.onload = function () {
+    generateAlphabet ();
+}
+
+//credit to 'Code Limitless(youtube)' for drag and drop functions
+//setting up a global variable so that every function can access it
+var id;
+//making the browser allow me drop an element because by default it won't
+function allowDrop(event){
+    event.preventDefault();
+}
+//function for dragging
+function drag(event){
+    //targets the element to which it has been assigned
+    id=event.target.id;
+}
+//function for dropping
+function drop(event){
+    //targets the specific div; the element will be appended to the drop zone
+    event.target.append(document.getElementById(id));
+}
+
+//function for the reset button so that the game can be restarted at any point
+//the page will be reloaded from cache
+function reset() {
+    location.reload();
+}
+
+//create a function that is activated when the start button is clicked
+function start() {
+    //when the timer is stared, a message is shown to indicate it
+    alert("The timer has started!");
+    //set the playing time to 1 minute
+    //here it is set to 5 seconds so that it can be tested without waiting much time
+    var playTime = 5000;
+    //when the timer ends, another message is shown to indicate again
+    var endMessage = "Time's up!";
+    //the whole process should be executed only onc3
+    var counter = 1;
+    //set up the timer
+    var timer = window.setInterval(timerAction, playTime);
+    //create a function that will be executed when the time is up
+    function timerAction() {
+        //decrement the counter so that the function is executed only once
+        counter--;
+        if(counter == 0){
+            alert(endMessage);
+            clearInterval(timer);
+        }
+    }
+}
+
+
+
+
+
+
+
