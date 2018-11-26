@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Azbuka</title>
+
+    <link rel = "stylesheet" type = "text/css" href = "game.css">
+    <script src = "game.js"></script>
+</head>
+<body>
+
+<h1 id="az">AZBUKA</h1>
+
+<div id = "instructions">
+    <h4>Instructions:</h4>
+    <p>The letters of the English alphabet are jumbled and you have to put them in the right order.<br>
+        To do that, you have to drag a specific letter and drop it in a square.<br>
+        You have 1 minute(however, it is set to 5 seconds so that it can be tested<br> without waiting much time)
+        to put the letters in the right order.<br>
+        Click on 'Start' button to initiate the timer.
+    </p>
+</div>
+
+<hr>
+
+<div>
+    <input type="button" id="startButton" class="button" value="Start" onclick="start()"/>
+    <input type="button" id="resetButton" class="button" value="Reset" onclick="reset()"/>
+</div>
+
+
+<div id="lettersContainer">
+
+</div>
+
+<div id="dropZone">
+    <div id="dropZoneA" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneB" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneC" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneD" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneE" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneF" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneG" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneH" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneI" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneJ" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneK" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneL" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneM" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneN" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneO" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneP" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneQ" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneR" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneS" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneT" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneU" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneV" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneW" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneX" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneY" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="dropZoneZ" class="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</div>
+</body>
+</html>
